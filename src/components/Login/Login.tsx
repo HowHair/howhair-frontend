@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import LoginStart from './LoginStart';
 // import logo from '/images/Howhair_Logo.png';
 
 const LoginComponent = () => {
+  const [data, setData] = useState('');
+  useEffect(() => {
+    setData('');
+  }, []);
   return (
     <>
       <img src="/images/Howhair_Logo.png" alt="로고" />
