@@ -2,7 +2,7 @@ import React, { CSSProperties, useEffect, useState } from 'react';
 import { NavLink, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import LoginStart from './LoginStart';
-import ImgLoad from '../common/img';
+import LogoImgLoad from '../common/LogoImg';
 // import logo from '/images/Howhair_Logo.png';
 
 const LoginComponent = () => {
@@ -15,7 +15,7 @@ const LoginComponent = () => {
   };
   return (
     <div style={divStyle}>
-      <ImgLoad />
+      <LogoImgLoad />
       <p>
         그 미용실 어때? <br />
         내가 하려는 머리타일의 자세한 리뷰들 부터 <br />
