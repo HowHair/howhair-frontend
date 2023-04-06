@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { CSSProperties, useEffect, useState } from 'react';
 import { NavLink, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import LoginStart from './LoginStart';
 // import logo from '/images/Howhair_Logo.png';
 
 const LoginComponent = () => {
-  const [data, setData] = useState('');
-  useEffect(() => {
-    setData('');
-  }, []);
+  // const [data, setData] = useState('');
+  // useEffect(() => {
+  //   setData('');
+  // }, []);
+  const divStyle: CSSProperties = {
+    textAlign: 'center',
+  };
   return (
-    <>
+    <div style={divStyle}>
       <img src="/images/Howhair_Logo.png" alt="로고" />
       <p>
         그 미용실 어때? <br />
@@ -21,7 +24,7 @@ const LoginComponent = () => {
       <button type="button">
         <NavLink to="/LoginStart">로그인</NavLink>
       </button>
-    </>
+    </div>
   );
 };
 
