@@ -1,14 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import { ThemeProvider } from 'styled-components';
+
+import Router from './Router';
 import GlobalStyle from './styles/globalStyle';
 import theme from './styles/theme';
-import Router from './Router';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+const App = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     <Router />
   </ThemeProvider>
 );
+
+export default App;
