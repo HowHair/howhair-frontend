@@ -7,8 +7,6 @@ import LoginStart from './LoginStart';
 const LoginComponent = () => {
   return (
     <>
-      <StLoginWrapper>Login 컴포넌트</StLoginWrapper>
-
       <img src="/images/Howhair_Logo.png" alt="로고" />
       <p>
         그 미용실 어때? <br />
