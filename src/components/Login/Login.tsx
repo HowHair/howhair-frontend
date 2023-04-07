@@ -1,15 +1,11 @@
-import React, { CSSProperties, useEffect, useState } from 'react';
-import { NavLink, Route } from 'react-router-dom';
+import React, { CSSProperties } from 'react';
+import { Route } from 'react-router-dom';
 import styled from 'styled-components';
 import LoginStart from './LoginStart';
 import LogoImgLoad from '../common/LogoImg';
 // import logo from '/images/Howhair_Logo.png';
 
 const LoginComponent = () => {
-  // const [data, setData] = useState('');
-  // useEffect(() => {
-  //   setData('');
-  // }, []);
   const divStyle: CSSProperties = {
     textAlign: 'center',
   };
@@ -39,7 +35,7 @@ const LoginComponent = () => {
 
       {/* 카카오톡 로그인 버튼 */}
       <button type="button" style={buttonStyle}>
-        <NavLink to="/LoginStart">카카오 계정으로 로그인</NavLink>
+        카카오 계정으로 로그인
       </button>
     </div>
   );
