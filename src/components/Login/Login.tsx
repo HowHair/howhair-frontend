@@ -1,8 +1,7 @@
 import React, { CSSProperties } from 'react';
-import { Route } from 'react-router-dom';
 import styled from 'styled-components';
-import LoginStart from './LoginStart';
 import LogoImgLoad from '../common/LogoImg';
+import { Link } from 'react-router-dom';
 // import logo from '/images/Howhair_Logo.png';
 
 const LoginComponent = () => {
@@ -34,14 +33,15 @@ const LoginComponent = () => {
       </p>
 
       {/* 카카오톡 로그인 버튼 */}
-      <button type="button" style={buttonStyle}>
-        카카오 계정으로 로그인
-      </button>
+      <Link to="/LoginStart">
+        <button type="button" style={buttonStyle}>
+          카카오 계정으로 로그인
+        </button>
+      </Link>
     </div>
   );
 };
 
-<Route path="LoginStart" element={<LoginStart />} />;
 export default LoginComponent;
 
 const StLoginWrapper = styled.div`
