@@ -7,9 +7,7 @@ type Props = {
 export const Container = ({ children }: Props) => {
   return (
     <Wrapper>
-      <Main>
-        <Content>{children}</Content>
-      </Main>
+      <Main>{children}</Main>
     </Wrapper>
   );
 };
@@ -19,10 +17,6 @@ const Wrapper = styled.div`
   height: 100vh;
   display: flex;
   justify-content: center;
-`;
-
-const Content = styled.div`
-  width: 100%;
 `;
 
 const Main = styled.main`

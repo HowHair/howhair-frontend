@@ -11,7 +11,8 @@ const colors = {
   gr_1: '#363636',
   gr_2: '#7B7B7B',
   gr_3: '#DCDCDC',
-  pr_4: '#EAEAEA',
+  gr_4: '#EAEAEA',
+  gr_5: '#F5F5F5',
   white: '#F8F8F8',
   ff: '#FFFFFF',
 };
