@@ -1,7 +1,6 @@
 import React, { CSSProperties } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import styled from 'styled-components';
-import LoginGender from './LoginGender';
 import LogoImgLoad from '../common/LogoImg';
 
 const LoginStart = () => {
