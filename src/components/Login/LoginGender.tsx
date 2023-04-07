@@ -1,23 +1,34 @@
-import React from 'react';
+import React, { CSSProperties, useState } from 'react';
 // import styled from 'styled-components';
-import { NavLink, Route } from 'react-router-dom';
-import LoginHairLength from './LoginHairLength';
+import { Link } from 'react-router-dom';
 
 const LoginGender = () => {
+  const divStyle: CSSProperties = {
+    textAlign: 'center',
+  };
+
+  const pStepStyle: CSSProperties = {
+    fontSize: '24px',
+    color: '#9F62ED',
+  };
+
+  const pStyle: CSSProperties = {
+    fontSize: '18px',
+    color: '#131313',
+  };
+
   return (
-    <div>
-      <p>Step 1</p>
-      <p>성별을 선택해주세요.</p>
+    <div style={divStyle}>
+      <p style={pStepStyle}>Step 1</p>
+      <p style={pStyle}>성별을 선택해주세요.</p>
 
       {/* radio button 사용해야하나? */}
       <button type="button">여자</button>
       <button type="button">남자</button>
-
-      <button type="button">
-        <NavLink to="/LoginHairLength">다음 단계</NavLink>
-      </button>
+      <Link to="/LoginHairLength">
+        <button type="button">다음 단계</button>
+      </Link>
     </div>
   );
 };
-<Route path="LoginHairLength" element={<LoginHairLength />} />;
 export default LoginGender;
