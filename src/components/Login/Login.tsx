@@ -13,17 +13,33 @@ const LoginComponent = () => {
   const divStyle: CSSProperties = {
     textAlign: 'center',
   };
+
+  const pStyle: CSSProperties = {
+    textAlign: 'center',
+    color: '#363636',
+  };
+
+  const buttonStyle: CSSProperties = {
+    width: '300px',
+    height: '50px',
+    backgroundColor: '#F9E000',
+    borderRadius: '50px',
+    textAlign: 'center',
+    color: '#332525',
+  };
+
   return (
     <div style={divStyle}>
       <LogoImgLoad />
-      <p>
+      <p style={pStyle}>
         그 미용실 어때? <br />
         내가 하려는 머리타일의 자세한 리뷰들 부터 <br />
         헤어 스타일에 맞는 스타일 추천까지!
       </p>
+
       {/* 카카오톡 로그인 버튼 */}
-      <button type="button">
-        <NavLink to="/LoginStart">로그인</NavLink>
+      <button type="button" style={buttonStyle}>
+        <NavLink to="/LoginStart">카카오 계정으로 로그인</NavLink>
       </button>
     </div>
   );
