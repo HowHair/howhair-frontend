@@ -8,6 +8,8 @@ import LoginHairPerm from './components/Login/LoginHairPerm';
 import LoginStart from './components/Login/LoginStart';
 
 import Main from './pages/Main';
+import MyThing from './pages/MyThing';
+import Popular from './pages/Popular';
 
 const Router = () => {
   return (
@@ -20,6 +22,8 @@ const Router = () => {
         <Route path="/LoginStart" element={<LoginStart />} />
         <Route path="/hairshop" element={<HairShop />} />
         <Route path="/main" element={<Main />} />
+        <Route path="/mything" element={<MyThing />} />
+        <Route path="/popular" element={<Popular />} />
       </Routes>
     </BrowserRouter>
   );

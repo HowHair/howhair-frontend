@@ -13,7 +13,8 @@ declare module 'styled-components' {
       gr_1;
       gr_2;
       gr_3;
-      pr_4;
+      gr_4;
+      gr_5;
       white;
       ff;
     };

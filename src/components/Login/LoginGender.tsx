@@ -44,7 +44,7 @@ const LoginGender = () => {
 
   const [selectedGender, setSelectedGender] = useState('');
 
-  const handleClick = gender => {
+  const handleClick = (gender: React.SetStateAction<string>) => {
     setSelectedGender(gender);
   };
 
