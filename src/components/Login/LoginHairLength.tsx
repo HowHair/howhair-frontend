@@ -1,7 +1,6 @@
 import React, { CSSProperties, useState } from 'react';
 // import styled from 'styled-components';
-import { NavLink, Route } from 'react-router-dom';
-import LoginHairPerm from './LoginHairPerm';
+import { Link } from 'react-router-dom';
 
 const LoginHairLength = () => {
   const divStyle: CSSProperties = {
@@ -45,13 +44,15 @@ const LoginHairLength = () => {
 
   const [selectedHairLength, setSelectedHairLength] = useState('');
 
-  const handleClick = length => {
+  const handleClick = (length: React.SetStateAction<string>) => {
     setSelectedHairLength(length);
   };
 
   const buttonData = [
-    { length: 'male', text: '남성' },
-    { length: 'female', text: '여성' },
+    { length: 'underEar', text: '귀 밑' },
+    { length: 'overEar', text: '귀 위' },
+    { length: 'earToShoulder', text: '귀 ~ 어깨' },
+    { length: 'shoulderToMore', text: '어깨 ~ 그 이상' },
   ];
 
   return (
@@ -59,18 +60,26 @@ const LoginHairLength = () => {
       <p style={pStepStyle}>Step 2</p>
       <p style={pStyle}>머리 기장을 선택해주세요.</p>
 
-      {/* radio button 사용해야하나? */}
-      {/* 버튼 안에 이모지 넣기 */}
-      <button type="button">귀 밑</button>
-      <button type="button">귀 위</button>
-      <button type="button">귀~어깨</button>
-      <button type="button">어깨~그 이상</button>
+      {buttonData.map(button => (
+        <button
+          key={button.length}
+          style={
+            selectedHairLength === button.length
+              ? afClickBtnStyle
+              : bfClickBtnStyle
+          }
+          onClick={() => handleClick(button.length)}
+        >
+          {button.text}
+        </button>
+      ))}
 
-      <button type="button">
-        <NavLink to="/LoginHairPerm">다음 단계</NavLink>
-      </button>
+      <Link to="/LoginHairLength">
+        <button type="button" style={buttonStyle}>
+          다음 단계
+        </button>
+      </Link>
     </div>
   );
 };
-<Route path="LoginHairPerm" element={<LoginHairPerm />} />;
 export default LoginHairLength;
