@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { BackIcon } from '../../assets/icons';
 import theme from '../../styles/theme';
 
-export const Header = ({ title }: { title: string }) => {
+export const Header = ({ title }: { title: string | undefined }) => {
   const navigate = useNavigate();
   return (
     <Wrapper>
