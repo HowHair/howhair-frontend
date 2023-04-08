@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import theme from '../../styles/theme';
 import { Bar } from '../common/Bar';
+import { Card } from '../common/Card';
 import { Header } from '../common/Header';
 
 const MY_THING_CONTENT = [
@@ -42,17 +42,13 @@ const MyThingComponent = () => {
       {MY_THING_CONTENT.map((item, index) => {
         return (
           <CardContainer key={index}>
-            <CardWrapper>
-              <ImgWrapper>
-                <Img src={item.img} alt={item.img} />
-              </ImgWrapper>
-              <div>
-                <Title>{item.title}</Title>
-                <Content>{item.content}</Content>
-                <Type>{item.type}</Type>
-                <Price>{item.price}</Price>
-              </div>
-            </CardWrapper>
+            <Card
+              img={item.img}
+              title={item.title}
+              content={item.content}
+              type={item.type}
+              price={item.price}
+            />
           </CardContainer>
         );
       })}
@@ -71,44 +67,6 @@ const Container = styled.div`
   padding: 0 20px;
 `;
 
-const Img = styled.img`
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  ${theme.borderRadius.img}
-`;
-
-const ImgWrapper = styled.div`
-  margin-right: 12px;
-`;
-
-const CardWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  ${theme.borderRadius.card}
-  background-color: ${theme.colors.gr_5};
-  width: 340px;
-  padding: 12px;
-`;
-
 const CardContainer = styled.div`
-  margin-top: 12px;
-`;
-
-const Title = styled.div`
-  ${theme.fonts.Pretendard_Caption1_Medium_16}
-  font-weight: 600;
-`;
-
-const Content = styled.div`
-  margin-top: 18px;
-`;
-
-const Type = styled.div`
-  margin-top: 12px;
-  color: ${theme.colors.main};
-`;
-
-const Price = styled.div`
   margin-top: 12px;
 `;
