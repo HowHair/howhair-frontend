@@ -74,7 +74,7 @@ const LoginHairLength = () => {
         </button>
       ))}
 
-      <Link to="/LoginHairLength">
+      <Link to="/LoginHairPerm">
         <button type="button" style={buttonStyle}>
           다음 단계
         </button>
