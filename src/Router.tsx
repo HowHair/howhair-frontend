@@ -4,6 +4,7 @@ import HairShop from './pages/HairShop';
 import Login from './pages/Login';
 import Main from './pages/Main';
 import MyThing from './pages/MyThing';
+import Popular from './pages/Popular';
 
 const Router = () => {
   return (
@@ -13,7 +14,7 @@ const Router = () => {
         <Route path="/hairshop" element={<HairShop />} />
         <Route path="/main" element={<Main />} />
         <Route path="/mything" element={<MyThing />} />
-        <Route path="/popular" element={<Main />} />
+        <Route path="/popular" element={<Popular />} />
       </Routes>
     </BrowserRouter>
   );

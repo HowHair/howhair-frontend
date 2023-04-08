@@ -53,7 +53,7 @@ const MainComponent = () => {
         <PopularWrapper>
           <TitleWrapper>
             <div>인기 많은 스타일</div>
-            <IconWrapper>
+            <IconWrapper onClick={() => navigate('/popular')}>
               <MoreIcon />
             </IconWrapper>
           </TitleWrapper>
