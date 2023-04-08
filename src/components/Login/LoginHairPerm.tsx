@@ -1,21 +1,86 @@
-import React from 'react';
+import React, { CSSProperties, useState } from 'react';
+import { Link } from 'react-router-dom';
 // import styled from 'styled-components';
-// import {NavLink} from 'react-router-dom';
 
 const LoginHairPerm = () => {
+  const divStyle: CSSProperties = {
+    textAlign: 'center',
+  };
+
+  const pStepStyle: CSSProperties = {
+    fontSize: '24px',
+    color: '#9F62ED',
+  };
+
+  const pStyle: CSSProperties = {
+    fontSize: '18px',
+    color: '#131313',
+  };
+
+  const bfClickBtnStyle: CSSProperties = {
+    width: '135px',
+    height: '142px',
+    backgroundColor: '#FFFFFF',
+    color: '#131313',
+    textAlign: 'center',
+  };
+
+  const afClickBtnStyle: CSSProperties = {
+    width: '135px',
+    height: '142px',
+    backgroundColor: '#7C00DE',
+    color: '#F8F8F8',
+    textAlign: 'center',
+  };
+
+  const pRevStyle: CSSProperties = {
+    fontSize: '12px',
+    color: '#7B7B7B',
+  };
+
+  const buttonStyle: CSSProperties = {
+    width: '328px',
+    height: '46px',
+    backgroundColor: '#7C00DE',
+    borderRadius: '15px',
+    textAlign: 'center',
+    color: '#FFFFFF',
+  };
+
+  const [selectedHairPerm, setSelectedHairPerm] = useState('');
+
+  const handleClick = (perm: React.SetStateAction<string>) => {
+    setSelectedHairPerm(perm);
+  };
+
+  const buttonData = [
+    { perm: 'curl', text: '곱슬' },
+    { perm: 'semiCurl', text: '반곱슬' },
+    { perm: 'straight', text: '직모' },
+  ];
   return (
-    <div>
-      <p>Step 3</p>
-      <p>곱슬 정도를 선택해주세요.</p>
+    <div style={divStyle}>
+      <p style={pStepStyle}>Step 3</p>
+      <p style={pStyle}>곱슬 정도를 선택해주세요.</p>
 
-      {/* radio button 사용해야하나? */}
-      {/* 버튼 안에 이모지 넣기 */}
-      <button type="button">곱슬</button>
-      <button type="button">반곱슬</button>
-      <button type="button">직모</button>
+      {buttonData.map(button => (
+        <button
+          key={button.perm}
+          style={
+            selectedHairPerm === button.perm ? afClickBtnStyle : bfClickBtnStyle
+          }
+          onClick={() => handleClick(button.perm)}
+        >
+          {button.text}
+        </button>
+      ))}
 
-      <p>My page에서 수정 가능합니다.</p>
-      <button type="button">추천 스타일 보러 가기</button>
+      <p style={pRevStyle}>My page에서 수정 가능합니다.</p>
+      <Link to="/">
+        <button type="button" style={buttonStyle}>
+          추천 스타일 보러 가기
+        </button>
+      </Link>
     </div>
   );
 };
