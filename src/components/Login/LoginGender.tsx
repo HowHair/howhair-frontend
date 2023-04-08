@@ -17,16 +17,63 @@ const LoginGender = () => {
     color: '#131313',
   };
 
+  const bfClickBtnStyle: CSSProperties = {
+    width: '135px',
+    height: '142px',
+    backgroundColor: '#FFFFFF',
+    color: '#131313',
+    textAlign: 'center',
+  };
+
+  const afClickBtnStyle: CSSProperties = {
+    width: '135px',
+    height: '142px',
+    backgroundColor: '#7C00DE',
+    color: '#F8F8F8',
+    textAlign: 'center',
+  };
+
+  const buttonStyle: CSSProperties = {
+    width: '305px',
+    height: '46px',
+    backgroundColor: '#9F62ED',
+    borderRadius: '15px',
+    textAlign: 'center',
+    color: '#FFFFFF',
+  };
+
+  const [selectedGender, setSelectedGender] = useState('');
+
+  const handleClick = gender => {
+    setSelectedGender(gender);
+  };
+
+  const buttonData = [
+    { gender: 'male', text: '남성' },
+    { gender: 'female', text: '여성' },
+  ];
+
   return (
     <div style={divStyle}>
       <p style={pStepStyle}>Step 1</p>
       <p style={pStyle}>성별을 선택해주세요.</p>
 
-      {/* radio button 사용해야하나? */}
-      <button type="button">여자</button>
-      <button type="button">남자</button>
+      {buttonData.map(button => (
+        <button
+          key={button.gender}
+          style={
+            selectedGender === button.gender ? afClickBtnStyle : bfClickBtnStyle
+          }
+          onClick={() => handleClick(button.gender)}
+        >
+          {button.text}
+        </button>
+      ))}
+
       <Link to="/LoginHairLength">
-        <button type="button">다음 단계</button>
+        <button type="button" style={buttonStyle}>
+          다음 단계
+        </button>
       </Link>
     </div>
   );
