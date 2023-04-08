@@ -1,5 +1,6 @@
 import React, { CSSProperties, useState } from 'react';
 import { Link } from 'react-router-dom';
+import MyBackButton from '../common/back';
 // import styled from 'styled-components';
 
 const LoginHairPerm = () => {
@@ -60,6 +61,7 @@ const LoginHairPerm = () => {
   ];
   return (
     <div style={divStyle}>
+      <MyBackButton />
       <p style={pStepStyle}>Step 3</p>
       <p style={pStyle}>곱슬 정도를 선택해주세요.</p>
 
