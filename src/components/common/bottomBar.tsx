@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 
-const navStyle = {
+const navStyle: CSSProperties = {
   overflow: 'hidden',
 };
 
-const buttonStyle = {
+const buttonStyle: CSSProperties = {
   /* 수평정렬, 3개의 button을 각각 30% width만큼 할당 */
   textAlign: 'center',
   float: 'left',
