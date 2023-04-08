@@ -2,9 +2,9 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { Logo, MoreIcon } from '../../assets/icons';
+import { KEYWORD } from '../../constant';
 import theme from '../../styles/theme';
 
-const KEYWORD = ['커트', '펌', '염색', '매직'];
 const MY_THING = [
   { src: '/images/img1.jpg', hashtag: '#애쉬 바이올렛' },
   { src: '/images/img2.jpg', hashtag: '#옴브레' },
@@ -26,8 +26,15 @@ const MainComponent = () => {
       </LogoWrapper>
       <ContentWrapper>
         <KeywordWrapper>
-          {KEYWORD.map((keyword, index) => {
-            return <Keyword key={index}>{keyword}</Keyword>;
+          {KEYWORD.map((item, index) => {
+            return (
+              <Keyword
+                key={index}
+                onClick={() => navigate(`/keyword?name=${item.keyword}`)}
+              >
+                {item.name}
+              </Keyword>
+            );
           })}
         </KeywordWrapper>
         <MyThingWrapper>
