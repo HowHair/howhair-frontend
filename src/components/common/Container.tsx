@@ -21,7 +21,7 @@ const Wrapper = styled.div`
 
 const Main = styled.main`
   position: relative;
-  max-width: 32rem;
+  max-width: 390px;
   width: 100%;
   height: 100%;
   background-color: #ffffff;

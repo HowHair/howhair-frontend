@@ -73,8 +73,24 @@ const fonts = {
   `,
 };
 
+const borderRadius = {
+  button: css`
+    border-radius: 4px;
+  `,
+  card: css`
+    border-radius: 6px;
+  `,
+  img: css`
+    border-radius: 4px;
+  `,
+  wrapper: css`
+    border-radius: 6px;
+  `,
+};
+
 const theme = {
   colors,
   fonts,
+  borderRadius,
 };
 export default theme;
