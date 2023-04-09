@@ -42,7 +42,7 @@ const POPULAR_CONTENT = [
 ];
 
 type ConditionProps = {
-  gender: 'male' | 'female';
+  gender: 'MALE' | 'FEMALE';
   hairLength: number;
   curly: number;
   hairStyle: string[];
@@ -85,15 +85,15 @@ const Condition = ({
           <Tag>성별</Tag>
           <div>
             <Button
-              selected={condition.gender === 'female'}
-              onClick={() => onClick('gender', 'female')}
+              selected={condition.gender === 'FEMALE'}
+              onClick={() => onClick('gender', 'FEMALE')}
               css={ButtonCss}
             >
               여성
             </Button>
             <Button
-              selected={condition.gender === 'male'}
-              onClick={() => onClick('gender', 'male')}
+              selected={condition.gender === 'MALE'}
+              onClick={() => onClick('gender', 'MALE')}
             >
               남성
             </Button>

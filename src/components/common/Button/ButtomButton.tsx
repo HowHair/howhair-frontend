@@ -41,6 +41,7 @@ export const ButtomButton = ({
 
 export const CustomButton = styled.button<{ css: CSSProp | undefined }>`
   position: absolute;
+  left: 20px;
   bottom: 12px;
   width: calc(100% - 40px);
   height: 30px;

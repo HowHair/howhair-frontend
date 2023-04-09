@@ -41,7 +41,7 @@ const POPULAR_CONTENT = [
 ];
 
 type ConditionProps = {
-  gender: 'male' | 'female';
+  gender: 'MALE' | 'FEMALE';
   hairLength: number;
   curly: number;
   hairStyle: string[];
@@ -55,7 +55,7 @@ const KeywordComponent = () => {
     KEYWORD.find(item => item.keyword === keyword)?.name;
   const [modal, setModal] = useState<boolean>(false);
   const [condition, setCondition] = useState<ConditionProps>({
-    gender: 'female',
+    gender: 'FEMALE',
     hairLength: 1,
     curly: 1,
     hairStyle: [],

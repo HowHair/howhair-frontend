@@ -7,7 +7,7 @@ export const Header = ({
   title,
   onClickBack,
 }: {
-  title: string | undefined;
+  title?: string | undefined;
   onClickBack?: () => void;
 }) => {
   const navigate = useNavigate();
