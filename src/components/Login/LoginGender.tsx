@@ -49,8 +49,8 @@ const LoginGender = () => {
   };
 
   const buttonData = [
-    { gender: 'male', text: '남성' },
     { gender: 'female', text: '여성' },
+    { gender: 'male', text: '남성' },
   ];
 
   return (
