@@ -11,7 +11,7 @@ const App = () => (
     <GlobalStyle />
     <Container>
       <Router>
-        <NavBar />
+        <div />
       </Router>
     </Container>
   </ThemeProvider>
