@@ -61,8 +61,7 @@ const fonts = {
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 400;
-    font-size: 10px;
-    line-height: 1.9rem;
+    font-size: 16px;
   `,
   Pretendard_caption3_regular_12: css`
     font-family: 'Pretendard';
