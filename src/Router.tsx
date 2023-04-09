@@ -11,7 +11,11 @@ import MyThing from './pages/MyThing';
 import Popular from './pages/Popular';
 import Keyword from './pages/Keyword';
 
-const Router = () => {
+type Props = {
+  children: JSX.Element;
+};
+
+const Router = ({ children }: Props) => {
   return (
     <BrowserRouter>
       <Routes>
@@ -26,6 +30,7 @@ const Router = () => {
         <Route path="/popular" element={<Popular />} />
         <Route path="/keyword" element={<Keyword />} />
       </Routes>
+      {children}
     </BrowserRouter>
   );
 };

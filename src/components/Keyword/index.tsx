@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { TuneIcon } from '../../assets/icons';
@@ -6,6 +7,7 @@ import theme from '../../styles/theme';
 import { Bar } from '../common/Bar';
 import { Card } from '../common/Card';
 import { Header } from '../common/Header';
+import Condition from './Condition';
 
 const POPULAR_CONTENT = [
   {
@@ -38,15 +40,33 @@ const POPULAR_CONTENT = [
   },
 ];
 
+type ConditionProps = {
+  gender: 'male' | 'female';
+  hairLength: number;
+  curly: number;
+  hairStyle: string[];
+  minPrice: number;
+  maxPrice: number;
+};
+
 const KeywordComponent = () => {
   const [searchParams] = useSearchParams();
   const getKeywordName = (keyword: string) =>
     KEYWORD.find(item => item.keyword === keyword)?.name;
+  const [modal, setModal] = useState<boolean>(false);
+  const [condition, setCondition] = useState<ConditionProps>({
+    gender: 'female',
+    hairLength: 1,
+    curly: 1,
+    hairStyle: [],
+    minPrice: 0,
+    maxPrice: 100000,
+  });
 
   return (
     <Container>
       <Header title={getKeywordName(`${searchParams.get('name')}`)} />
-      <ConditionWrapper>
+      <ConditionWrapper onClick={() => setModal(true)}>
         <IconWrapper>
           <TuneIcon />
         </IconWrapper>
@@ -65,6 +85,13 @@ const KeywordComponent = () => {
           </CardContainer>
         );
       })}
+      {modal && (
+        <Condition
+          setModal={setModal}
+          condition={condition}
+          setCondition={setCondition}
+        />
+      )}
     </Container>
   );
 };
@@ -78,6 +105,7 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   padding: 0 20px;
+  box-sizing: border-box;
 `;
 
 const CardContainer = styled.div`
@@ -86,6 +114,7 @@ const CardContainer = styled.div`
 
 const IconWrapper = styled.div`
   cursor: pointer;
+  margin-right: 4px;
 `;
 
 const ConditionWrapper = styled.div`

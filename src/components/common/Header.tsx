@@ -3,11 +3,24 @@ import styled from 'styled-components';
 import { BackIcon } from '../../assets/icons';
 import theme from '../../styles/theme';
 
-export const Header = ({ title }: { title: string | undefined }) => {
+export const Header = ({
+  title,
+  onClickBack,
+}: {
+  title: string | undefined;
+  onClickBack?: () => void;
+}) => {
   const navigate = useNavigate();
+  const onClick = () => {
+    if (onClickBack !== undefined) {
+      onClickBack();
+      return;
+    }
+    navigate(-1);
+  };
   return (
     <Wrapper>
-      <IconWrapper onClick={() => navigate(-1)}>
+      <IconWrapper onClick={onClick}>
         <BackIcon />
       </IconWrapper>
       <Title>{title}</Title>
