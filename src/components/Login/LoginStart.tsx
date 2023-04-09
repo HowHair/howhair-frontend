@@ -6,17 +6,21 @@ import LogoImgLoad from '../common/LogoImg';
 const LoginStart = () => {
   const divStyle: CSSProperties = {
     textAlign: 'center',
+    padding: '50px',
   };
 
   const illuImg: CSSProperties = {
     width: '350px',
     height: '233px',
+    marginTop: '50px',
+    marginBottom: '50px',
   };
 
   const pStyle: CSSProperties = {
     textAlign: 'center',
     color: '#363636',
     fontSize: '16px',
+    marginBottom: '100px',
   };
 
   const spanStyle: CSSProperties = {
@@ -31,6 +35,7 @@ const LoginStart = () => {
     borderRadius: '15px',
     textAlign: 'center',
     color: '#FFFFFF',
+    border: 'none',
   };
 
   return (
