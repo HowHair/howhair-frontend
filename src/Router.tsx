@@ -19,10 +19,7 @@ const Router = ({ children }: Props) => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path=" " element={<Login />} />
-        <Route path="/LoginGender" element={<LoginGender />} />
-        <Route path="/LoginHairLength" element={<LoginHairLength />} />
-        <Route path="/LoginHairPerm" element={<LoginHairPerm />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/LoginStart" element={<LoginStart />} />
         <Route path="/hairshop" element={<HairShop />} />
         <Route path="/main" element={<Main />} />
