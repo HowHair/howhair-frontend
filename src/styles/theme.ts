@@ -74,7 +74,7 @@ const fonts = {
 
 const borderRadius = {
   button: css`
-    border-radius: 4px;
+    border-radius: 15px;
   `,
   card: css`
     border-radius: 6px;
