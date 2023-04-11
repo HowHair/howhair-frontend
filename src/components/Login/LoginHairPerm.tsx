@@ -55,9 +55,9 @@ const LoginHairPerm = () => {
   };
 
   const buttonData = [
-    { perm: 'curl', text: '곱슬' },
-    { perm: 'semiCurl', text: '반곱슬' },
-    { perm: 'straight', text: '직모' },
+    { perm: 'CURL', text: '곱슬' },
+    { perm: 'SEMICURL', text: '반곱슬' },
+    { perm: 'STRAIGHT', text: '직모' },
   ];
   return (
     <div style={divStyle}>

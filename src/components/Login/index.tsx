@@ -8,7 +8,7 @@ import LoginGender from './LoginGender';
 // import logo from '/images/Howhair_Logo.png';
 
 const LoginComponent = () => {
-  const [myPageData, setMyPageData] = useState<MyPageProps>({gender: 'FEMALE', hairLength: 1, hairPerm: 1});
+  const [myPageData, setMyPageData] = useState<MyPageProps>({gender: 'FEMALE', hairLength: 'UNDEREAR', hairPerm: 'CURL'});
   const [page, setPage] = useState<number>(0);
   
   if(page > 0) return (

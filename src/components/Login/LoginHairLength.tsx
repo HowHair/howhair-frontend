@@ -50,10 +50,10 @@ const LoginHairLength = () => {
   };
 
   const buttonData = [
-    { length: 'underEar', text: '귀 밑' },
-    { length: 'overEar', text: '귀 위' },
-    { length: 'earToShoulder', text: '귀 ~ 어깨' },
-    { length: 'shoulderToMore', text: '어깨 ~ 그 이상' },
+    { length: 'UNDEREAR', text: '귀 밑' },
+    { length: 'OVEREAR', text: '귀 위' },
+    { length: 'EARTOSHOULDER', text: '귀 ~ 어깨' },
+    { length: 'SHOULDERTOMORE', text: '어깨 ~ 그 이상' },
   ];
 
   return (
