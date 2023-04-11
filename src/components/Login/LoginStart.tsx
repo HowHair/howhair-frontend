@@ -27,10 +27,9 @@ const LoginStart = () => {
 export default LoginStart;
 
 const divStyle: CSSProperties = {
-  width: '100%',
-  height: '100vh',
+  position: 'relative',
   textAlign: 'center',
-  padding: '50px',
+  height: '100%',
 };
 
 const illuImg: CSSProperties = {

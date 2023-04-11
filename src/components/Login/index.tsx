@@ -4,7 +4,9 @@ import styled from 'styled-components';
 import LogoImgLoad from '../common/LogoImg';
 import { ButtomButton } from '../common/Button/ButtomButton';
 import { Header } from '../common/Header';
+import LoginStart from './LoginStart';
 import LoginGender from './LoginGender';
+import LoginHairLength from './LoginHairLength';
 import LoginHairPerm from './LoginHairPerm';
 // import logo from '/images/Howhair_Logo.png';
 
@@ -15,13 +17,13 @@ const LoginComponent = () => {
   if(page > 0) return (
     <div style={divStyle}>
       <Header onClickBack={() => setPage((page) => page - 1)}/>
-      {page === 1 ?
-        <LoginGender myPageData={myPageData} setMyPageData={setMyPageData}/> :
+      {page === 1 ? 
+      <LoginStart /> :
         page === 2 ?
-          <div>
-            <div>step2</div>
-          </div> :
+        <LoginGender myPageData={myPageData} setMyPageData={setMyPageData}/> :
         page === 3 ?
+          <LoginHairLength myPageData={myPageData} setMyPageData={setMyPageData}/> :
+        page === 4 ?
           <LoginHairPerm myPageData={myPageData} setMyPageData={setMyPageData}/> :
         null}
       <ButtomButton onClick={() => setPage((page) => page + 1)}>다음 단계</ButtomButton>
@@ -42,7 +44,6 @@ const LoginComponent = () => {
           카카오 계정으로 로그인
         </button>
       </div>
-      <ButtomButton>다음 단계</ButtomButton>
     </div>
   );
 };
