@@ -5,6 +5,7 @@ import LogoImgLoad from '../common/LogoImg';
 import { ButtomButton } from '../common/Button/ButtomButton';
 import { Header } from '../common/Header';
 import LoginGender from './LoginGender';
+import LoginHairPerm from './LoginHairPerm';
 // import logo from '/images/Howhair_Logo.png';
 
 const LoginComponent = () => {
@@ -14,32 +15,33 @@ const LoginComponent = () => {
   if(page > 0) return (
     <div style={divStyle}>
       <Header onClickBack={() => setPage((page) => page - 1)}/>
-      {page === 1 ? 
+      {page === 1 ?
         <LoginGender myPageData={myPageData} setMyPageData={setMyPageData}/> :
         page === 2 ?
-        <div>
-          <div>step2</div>
-        </div> :
-        <div>
-          <div>step3</div>
-        </div>
-      }
+          <div>
+            <div>step2</div>
+          </div> :
+        page === 3 ?
+          <LoginHairPerm myPageData={myPageData} setMyPageData={setMyPageData}/> :
+        null}
       <ButtomButton onClick={() => setPage((page) => page + 1)}>다음 단계</ButtomButton>
     </div>
   )
   return (
     <div style={divStyle}>
-      <LogoImgLoad />
-      <p style={pStyle}>
-        그 미용실 어때? <br />
-        내가 하려는 머리타일의 자세한 리뷰들 부터 <br />
-        헤어 스타일에 맞는 스타일 추천까지!
-      </p>
+      <div>
+        <LogoImgLoad />
+        <p style={pStyle}>
+          그 미용실 어때? <br />
+          내가 하려는 머리타일의 자세한 리뷰들 부터 <br />
+          헤어 스타일에 맞는 스타일 추천까지!
+        </p>
 
-      {/* 카카오톡 로그인 버튼 */}
+        {/* 카카오톡 로그인 버튼 */}
         <button type="button" style={buttonStyle} onClick={() => setPage(1)}>
           카카오 계정으로 로그인
         </button>
+      </div>
       <ButtomButton>다음 단계</ButtomButton>
     </div>
   );
@@ -69,5 +71,7 @@ const buttonStyle: CSSProperties = {
   backgroundColor: '#F9E000',
   borderRadius: '50px',
   textAlign: 'center',
+  fontWeight: 'bold',
   color: '#332525',
+  border: 'none',
 };
