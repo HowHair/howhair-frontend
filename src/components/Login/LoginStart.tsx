@@ -4,42 +4,6 @@ import { Link } from 'react-router-dom';
 import LogoImgLoad from '../common/LogoImg';
 
 const LoginStart = () => {
-  const divStyle: CSSProperties = {
-    width: '100%',
-    height: '100vh',
-    textAlign: 'center',
-    padding: '50px',
-  };
-
-  const illuImg: CSSProperties = {
-    width: '350px',
-    height: '233px',
-    marginTop: '50px',
-    marginBottom: '50px',
-  };
-
-  const pStyle: CSSProperties = {
-    textAlign: 'center',
-    color: '#363636',
-    fontSize: '16px',
-    marginBottom: '100px',
-  };
-
-  const spanStyle: CSSProperties = {
-    color: '#7C00DE',
-    fontSize: '16px',
-  };
-
-  const buttonStyle: CSSProperties = {
-    width: '325px',
-    height: '52px',
-    backgroundColor: '#9F62ED',
-    borderRadius: '15px',
-    textAlign: 'center',
-    color: '#FFFFFF',
-    border: 'none',
-  };
-
   return (
     <div style={divStyle}>
       <LogoImgLoad />
@@ -61,3 +25,39 @@ const LoginStart = () => {
   );
 };
 export default LoginStart;
+
+const divStyle: CSSProperties = {
+  width: '100%',
+  height: '100vh',
+  textAlign: 'center',
+  padding: '50px',
+};
+
+const illuImg: CSSProperties = {
+  width: '350px',
+  height: '233px',
+  marginTop: '50px',
+  marginBottom: '50px',
+};
+
+const pStyle: CSSProperties = {
+  textAlign: 'center',
+  color: '#363636',
+  fontSize: '16px',
+  marginBottom: '100px',
+};
+
+const spanStyle: CSSProperties = {
+  color: '#7C00DE',
+  fontSize: '16px',
+};
+
+const buttonStyle: CSSProperties = {
+  width: '325px',
+  height: '52px',
+  backgroundColor: '#9F62ED',
+  borderRadius: '15px',
+  textAlign: 'center',
+  color: '#FFFFFF',
+  border: 'none',
+};
