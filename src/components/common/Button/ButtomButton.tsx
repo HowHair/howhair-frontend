@@ -44,14 +44,14 @@ export const CustomButton = styled.button<{ css: CSSProp | undefined }>`
   left: 20px;
   bottom: 12px;
   width: calc(100% - 40px);
-  height: 30px;
+  height: 52px;
   font-weight: 600;
   font-size: 18px;
   text-align: center;
   cursor: pointer;
   padding: 0;
   ${({ css }) => css};
-  background-color: ${theme.colors.main};
+  background-color: ${theme.colors.second};
   color: ${theme.colors.ff}};
   ${theme.borderRadius.button}
   border: none;
