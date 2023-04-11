@@ -5,6 +5,8 @@ import LogoImgLoad from '../common/LogoImg';
 
 const LoginStart = () => {
   const divStyle: CSSProperties = {
+    width: '100%',
+    height: '100vh',
     textAlign: 'center',
     padding: '50px',
   };
@@ -47,7 +49,7 @@ const LoginStart = () => {
         style={illuImg}
       />
       <p style={pStyle}>
-        타입에 따라 스타일이나 미용실을 추천해드려요 <br />
+        타입에 따라 스타일이나 미용실을 추천해드려요 <br /> <br />
         <span style={spanStyle}>My Type</span>을 입력해보러 갈까요?
       </p>
       <Link to="/LoginGender">
