@@ -1,7 +1,5 @@
 import React, { CSSProperties, Dispatch, SetStateAction } from 'react';
 // import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import MyBackButton from '../common/back';
 
 const buttonData = [
   { length: 'UNDEREAR', text: '귀 밑' },
@@ -23,10 +21,6 @@ const LoginHairLength = ({
 
   return (
     <div style={divStyle}>
-      {/* <MyBackButton />
-      <p style={pStepStyle}>Step 2</p>
-      <p style={pStyle}>머리 기장을 선택해주세요.</p> */}
-
       {buttonData.map(button => (
         <button
           key={button.length}
@@ -40,12 +34,6 @@ const LoginHairLength = ({
           {button.text}
         </button>
       ))}
-
-      {/* <Link to="/LoginHairPerm">
-        <button type="button" style={buttonStyle}>
-          다음 단계
-        </button>
-      </Link> */}
     </div>
   );
 };

@@ -22,10 +22,6 @@ const LoginHairPerm = ({
 
   return (
     <>
-      {/* <MyBackButton />
-      <p style={pStepStyle}>Step 3</p>
-      <p style={pStyle}>곱슬 정도를 선택해주세요.</p> */}
-
       {buttonData.map(button => (
         <button
           key={button.perm}
@@ -39,13 +35,6 @@ const LoginHairPerm = ({
           {button.text}
         </button>
       ))}
-
-      {/* <p style={pRevStyle}>My page에서 수정 가능합니다.</p>
-      <Link to="/">
-        <button type="button" style={buttonStyle}>
-          추천 스타일 보러 가기
-        </button>
-      </Link> */}
     </>
   );
 };
