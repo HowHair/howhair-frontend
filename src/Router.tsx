@@ -1,15 +1,15 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HairShop from './pages/HairShop';
 import Login from './pages/Login';
-import LoginGender from './components/Login/LoginGender';
-import LoginHairLength from './components/Login/LoginHairLength';
-import LoginHairPerm from './components/Login/LoginHairPerm';
 import LoginStart from './components/Login/LoginStart';
 
 import Main from './pages/Main';
 import MyThing from './pages/MyThing';
 import Popular from './pages/Popular';
 import Keyword from './pages/Keyword';
+
+import Infrev from './components/MyPage/infRev';
+import Bookmark from './components/MyPage/bookMark';
 
 type Props = {
   children: JSX.Element;
@@ -26,6 +26,8 @@ const Router = ({ children }: Props) => {
         <Route path="/mything" element={<MyThing />} />
         <Route path="/popular" element={<Popular />} />
         <Route path="/keyword" element={<Keyword />} />
+        <Route path="/infrev" element={<Infrev />} />
+        <Route path="/bookmark" element={<Bookmark />} />
       </Routes>
       {children}
     </BrowserRouter>
