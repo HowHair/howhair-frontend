@@ -1,4 +1,6 @@
 import React, { CSSProperties, Dispatch, SetStateAction } from 'react';
+import styled from 'styled-components';
+import theme from '../../styles/theme';
 
 const buttonData = [
   { gender: 'FEMALE', text: '여성' },
@@ -18,6 +20,8 @@ const LoginGender = ({
 
   return (
     <>
+      <PTitle>Step 1</PTitle>
+      <PDetail>성별을 선택해주세요.</PDetail>
       {buttonData.map(button => (
         <button
           key={button.gender}
@@ -51,3 +55,13 @@ const afClickBtnStyle: CSSProperties = {
   color: '#F8F8F8',
   textAlign: 'center',
 };
+
+const PTitle = styled.div`
+  ${theme.fonts.Pretendard_Title1_ExtraBold_24};
+  color: ${theme.colors.second};
+`;
+
+const PDetail = styled.div`
+  ${theme.fonts.Pretendard_Paragraph_Medium_18};
+  color: ${theme.colors.head_color};
+`;

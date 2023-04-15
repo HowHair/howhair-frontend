@@ -1,11 +1,21 @@
 import React, { CSSProperties, Dispatch, SetStateAction } from 'react';
+import styled from 'styled-components';
+import theme from '../../styles/theme';
 // import styled from 'styled-components';
 
 const buttonData = [
-  { length: 'UNDEREAR', text: '귀 밑' },
-  { length: 'OVEREAR', text: '귀 위' },
-  { length: 'EARTOSHOULDER', text: '귀 ~ 어깨' },
-  { length: 'SHOULDERTOMORE', text: '어깨 ~ 그 이상' },
+  { length: 'UNDEREAR', text: '귀 밑', emoji: 'UNDEREAR.png' },
+  { length: 'OVEREAR', text: '귀 위', emoji: 'OVEREAR.png' },
+  {
+    length: 'EARTOSHOULDER',
+    text: '귀 ~ 어깨',
+    emoji: 'EARTOSHOULDER.png',
+  },
+  {
+    length: 'SHOULDERTOMORE',
+    text: '어깨 ~ 그 이상',
+    emoji: 'SHOULDERTOMORE.png',
+  },
 ];
 
 const LoginHairLength = ({
@@ -20,7 +30,9 @@ const LoginHairLength = ({
   };
 
   return (
-    <div style={divStyle}>
+    <>
+      <PTitle>Step 1</PTitle>
+      <PDetail>머리 기장을 선택해주세요.</PDetail>
       {buttonData.map(button => (
         <button
           key={button.length}
@@ -31,27 +43,22 @@ const LoginHairLength = ({
           }
           onClick={() => handleClick('hairLength', button.length)}
         >
+          <img
+            key={button.length}
+            src={button.emoji} // 이미지 파일의 경로를 지정
+            alt={button.length}
+          />
           {button.text}
         </button>
       ))}
-    </div>
+    </>
   );
 };
 
 export default LoginHairLength;
 
-const divStyle: CSSProperties = {
-  textAlign: 'center',
-};
-
-// const pStepStyle: CSSProperties = {
-//   fontSize: '24px',
-//   color: '#9F62ED',
-// };
-
-// const pStyle: CSSProperties = {
-//   fontSize: '18px',
-//   color: '#131313',
+// const divStyle: CSSProperties = {
+//   textAlign: 'center',
 // };
 
 const bfClickBtnStyle: CSSProperties = {
@@ -70,11 +77,12 @@ const afClickBtnStyle: CSSProperties = {
   textAlign: 'center',
 };
 
-// const buttonStyle: CSSProperties = {
-//   width: '305px',
-//   height: '46px',
-//   backgroundColor: '#9F62ED',
-//   borderRadius: '15px',
-//   textAlign: 'center',
-//   color: '#FFFFFF',
-// };
+const PTitle = styled.div`
+  ${theme.fonts.Pretendard_Title1_ExtraBold_24};
+  color: ${theme.colors.second};
+`;
+
+const PDetail = styled.div`
+  ${theme.fonts.Pretendard_Paragraph_Medium_18};
+  color: ${theme.colors.head_color};
+`;

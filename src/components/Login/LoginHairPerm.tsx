@@ -1,4 +1,6 @@
 import React, { CSSProperties, Dispatch, SetStateAction } from 'react';
+import styled from 'styled-components';
+import theme from '../../styles/theme';
 // import { Link } from 'react-router-dom';
 // import MyBackButton from '../common/back';
 // import styled from 'styled-components';
@@ -22,6 +24,8 @@ const LoginHairPerm = ({
 
   return (
     <>
+      <PTitle>Step 3</PTitle>
+      <PDetail>곱슬 정도를 선택해주세요.</PDetail>
       {buttonData.map(button => (
         <button
           key={button.perm}
@@ -41,20 +45,6 @@ const LoginHairPerm = ({
 
 export default LoginHairPerm;
 
-// const divStyle: CSSProperties = {
-//   textAlign: 'center',
-// };
-
-// const pStepStyle: CSSProperties = {
-//   fontSize: '24px',
-//   color: '#9F62ED',
-// };
-
-// const pStyle: CSSProperties = {
-//   fontSize: '18px',
-//   color: '#131313',
-// };
-
 const bfClickBtnStyle: CSSProperties = {
   width: '135px',
   height: '142px',
@@ -71,16 +61,12 @@ const afClickBtnStyle: CSSProperties = {
   textAlign: 'center',
 };
 
-// const pRevStyle: CSSProperties = {
-//   fontSize: '12px',
-//   color: '#7B7B7B',
-// };
+const PTitle = styled.div`
+  ${theme.fonts.Pretendard_Title1_ExtraBold_24}
+  color: ${theme.colors.second};
+`;
 
-// const buttonStyle: CSSProperties = {
-//   width: '328px',
-//   height: '46px',
-//   backgroundColor: '#7C00DE',
-//   borderRadius: '15px',
-//   textAlign: 'center',
-//   color: '#FFFFFF',
-// };
+const PDetail = styled.div`
+  ${theme.fonts.Pretendard_Paragraph_Medium_18}
+  color: ${theme.colors.head_color};
+`;
