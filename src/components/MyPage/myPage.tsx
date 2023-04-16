@@ -19,7 +19,7 @@ const myPage = () => {
       <Content>
         문의 사항 및 버그 관련 제보는 아래의 이메일 주소로 보내주세요.
       </Content>
-      <Content>📬 구글폼 주소</Content>
+      <Content>📬 구글폼 주소: </Content>
       <Line />
       <Menu>로그아웃</Menu>
       <Line />
