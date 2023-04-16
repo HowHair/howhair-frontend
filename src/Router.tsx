@@ -8,6 +8,7 @@ import MyThing from './pages/MyThing';
 import Popular from './pages/Popular';
 import Keyword from './pages/Keyword';
 
+import Mypage from './components/MyPage/myPage';
 import Infrev from './components/MyPage/infRev';
 import Bookmark from './components/MyPage/bookMark';
 
@@ -26,6 +27,7 @@ const Router = ({ children }: Props) => {
         <Route path="/mything" element={<MyThing />} />
         <Route path="/popular" element={<Popular />} />
         <Route path="/keyword" element={<Keyword />} />
+        <Route path="/mypage" element={<Mypage />} />
         <Route path="/infrev" element={<Infrev />} />
         <Route path="/bookmark" element={<Bookmark />} />
       </Routes>
