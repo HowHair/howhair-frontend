@@ -6,15 +6,17 @@ import Router from './Router';
 import GlobalStyle from './styles/globalStyle';
 import theme from './styles/theme';
 
-const App = () => (
-  <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    <Container>
-      <Router>
-        <div />
-      </Router>
-    </Container>
-  </ThemeProvider>
-);
+const App = () => {
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Container>
+        <Router>
+          <NavBar />
+        </Router>
+      </Container>
+    </ThemeProvider>
+  );
+};
 
 export default App;

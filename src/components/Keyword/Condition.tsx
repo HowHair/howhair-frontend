@@ -1,45 +1,11 @@
 import { ChangeEvent, Dispatch, SetStateAction } from 'react';
-import { useLocation, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import { TuneIcon } from '../../assets/icons';
 import { KEYWORD } from '../../constant';
 import theme from '../../styles/theme';
-import { Bar } from '../common/Bar';
 import { Button } from '../common/Button';
 import { ButtomButton } from '../common/Button/ButtomButton';
-import { Card } from '../common/Card';
 import { Header } from '../common/Header';
-
-const POPULAR_CONTENT = [
-  {
-    title: '가나다라헤어 홍대2호점',
-    content: '단발 S컬펌/발레아쥬 염색',
-    type: '펌, 염색',
-    price: '20-30만원',
-    img: '/images/img1.jpg',
-  },
-  {
-    title: '가나다라헤어',
-    content: '단발 S컬펌/발레아쥬 염색',
-    type: '펌, 염색',
-    price: '20-30만원',
-    img: '/images/img3.jpg',
-  },
-  {
-    title: '가나다라헤어 홍대2호점',
-    content: '단발 S컬펌/발레아쥬 염색',
-    type: '펌, 염색',
-    price: '20-30만원',
-    img: '/images/img2.jpg',
-  },
-  {
-    title: '가나다라헤어 홍대2123호점',
-    content: '단발 S컬펌/발레아쥬 염색',
-    type: '펌, 염색',
-    price: '20-30만원',
-    img: '/images/img1.jpg',
-  },
-];
 
 type ConditionProps = {
   gender: 'MALE' | 'FEMALE';
