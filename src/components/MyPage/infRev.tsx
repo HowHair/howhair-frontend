@@ -3,6 +3,8 @@ import { Header } from '../common/Header';
 import styled from 'styled-components';
 import theme from '../../styles/theme';
 import Line from '../common/Line/Line';
+import BottomBar from '../common/bottomBar';
+import axios from 'axios';
 
 const infRev = () => {
   return (
@@ -24,11 +26,38 @@ const infRev = () => {
       <Menu>곱슬 정도</Menu>
       {/* 드롭다운 */}
       {/* 하단바는 어떻게 구현할지? */}
+      <BottomBar />
     </>
   );
 };
 
 export default infRev;
+
+// 내 정보 수정 페이지 조회 (GET)
+axios
+  .get('http://howhair.site:3000/mypage')
+  .then(function (response) {
+    // response
+  })
+  .catch(function (error) {
+    // 오류발생시 실행
+  })
+  .then(function () {
+    // 항상 실행
+  });
+
+// 내 정보 수정 (PATCH)
+axios
+  .patch('http://howhair.site:3000/mypage', {})
+  .then(function (response) {
+    // response
+  })
+  .catch(function (error) {
+    // 오류발생시 실행
+  })
+  .then(function () {
+    // 항상 실행
+  });
 
 const Menu = styled.div`
   margin-top: 20px;
