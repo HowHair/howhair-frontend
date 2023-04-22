@@ -1,10 +1,14 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import { HairShopIcon, HomeIcon, MyPageIcon } from '../../../assets/icons';
 import theme from '../../../styles/theme';
 
 export const NavBar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  // Navbar 제외 페이지
+  if (location.pathname === '' || location.pathname === '/login') return null;
   return (
     <Container>
       <Bar />
