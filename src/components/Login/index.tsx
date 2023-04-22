@@ -34,7 +34,7 @@ const LoginComponent = () => {
         page === 4 ?
           <LoginHairPerm myPageData={myPageData} setMyPageData={setMyPageData}/> :
         null}
-        {/* <ButtomButton onClick={() => setPage((page) => page + 1)}>다음 단계</ButtomButton> */}
+        <ButtomButton onClick={() => setPage((page) => page + 1)}>다음 단계</ButtomButton>
     </div>
   )
   return (
@@ -49,10 +49,10 @@ const LoginComponent = () => {
                 헤어 스타일에 맞는 스타일 추천까지!
               </p>
             </PTitle>
-          {/* <button type="button" style={buttonStyle} onClick={() => setPage(1)}>
+          <button type="button" style={buttonStyle} onClick={() => setPage(1)}>
             카카오 계정으로 로그인
-          </button> */}
-          <a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=f90395304e9de3e92804ea7e23c1bd4f&redirect_uri=http://localhost:3000/login/kakao">카카오 로그인</a>
+          </button>
+          <a href="https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=f90395304e9de3e92804ea7e23c1bd4f&redirect_uri=http://localhost:3000/loginstart">카카오 로그인</a>
       </div>
     </BackGroundStyle>
   );
