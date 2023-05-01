@@ -1,9 +1,10 @@
 import React from 'react';
-import MyBackButton from '../back';
+import MyBackButton from '../common/NavBar/back';
 import { useState, useRef } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import { ko } from 'date-fns/esm/locale';
+import Line from '../common/Line/Line';
+import HairTypeDropdown from '../common/DropDown/HairType';
+
+type HairType = 'SELECT' | 'CUT' | 'PERM' | 'COLOR' | 'MAGIC';
 
 // 별점 기능
 function Star({ selected = false, onSelect }) {
@@ -15,7 +16,7 @@ function Star({ selected = false, onSelect }) {
 function StarRating({ totalStars }) {
   const [selectedStars, setSelectedStars] = useState(0);
 
-  const handleSelect = index => {
+  const handleSelect = (index: number) => {
     setSelectedStars(index + 1);
   };
   return (
@@ -35,7 +36,7 @@ function StarRating({ totalStars }) {
 }
 
 // 달력
-const datePicker = () => {
+const DatePicker = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [hairDate, setHairDate] = useState(new Date());
   return (
@@ -43,21 +44,13 @@ const datePicker = () => {
       locale={ko}
       dateFormat="yyyy년 MM월 dd일"
       selected={hairDate}
-      onChange={date => setHairDate(date)}
+      onChange={(date: React.SetStateAction<Date>) => setHairDate(date)}
       selectsStart
     />
   );
 };
 
 const reviewPage = () => {
-  // 드롭다운
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [selectedOption, setSelectedOption] = useState('시술 종류 선택');
-
-  const handleOptionChange = event => {
-    setSelectedOption(event.target.value);
-  };
-
   // 이미지
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [imgFile, setImgFile] = useState('');
@@ -73,7 +66,6 @@ const reviewPage = () => {
       setImgFile(reader.result);
     };
   };
-
   return (
     <>
       {/* 뒤로가기 */}
@@ -82,38 +74,32 @@ const reviewPage = () => {
       {/* 검색 선택 지도 */}
       <input type="text" placeholder="미용실을 검색해보세요." />
       <h2>시술 만족도</h2>
-      {/* 선 */}
+      <Line />
       {/* 별점 */}
       <StarRating totalStars={5} />
       <h2>시술 날짜</h2>
       {/* 날짜 드롭다운 + 달력 */}
-      <datePicker />
-      {/* 선 */}
+      <DatePicker />
+      <Line />
       <h2>디자이너</h2>
       <input type="text" placeholder="디자이너 이름을 입력해주세요." />
-      {/* 선 */}
+      <Line />
       <h2>시술 종류</h2>
       <p>중복 선택 가능</p>
       {/* 드롭다운 시술 종류 */}
-      {/* 드롭다운 select option사용하고 드롭다운 필요한 것마다 종류에 맞게 option 자동 생성하게 하고싶다 */}
-      <select value={selectedOption} onChange={handleOptionChange}>
-        <option value="시술 종류 선택">시술 종류 선택</option>
-        <option value="컷트">컷트</option>
-        <option value="펌">펌</option>
-        <option value="염색">염색</option>
-      </select>
+      <HairTypeDropdown />
       {/* 시술 클릭시 클릭한 시술 종류 리스트로 생기게 */}
-      {/* 선 */}
+      <Line />
       <h2>헤어 스타일</h2>
       <p>중복 선택 가능</p>
       {/* 드롭다운 헤어 스타일 종류 */}
-      {/* 선 */}
+      <Line />
       <h2>머리 기장</h2>
       {/* 드롭다운 기장 종류 */}
-      {/* 선 */}
+      <Line />
       <h2>시술 가격</h2>
       <input type="text" placeholder="가격 입력" />
-      {/* 선 */}
+      <Line />
       <h2>추가 내용</h2>
       {/* 사진 추가 */}
       <input
@@ -132,8 +118,8 @@ const reviewPage = () => {
       <textarea
         name="reviewComment"
         id="reviewComment"
-        cols="30"
-        rows="10"
+        cols={30}
+        rows={10}
         placeholder="내용 추가하기"
       />
       <button>작성 완료</button>
