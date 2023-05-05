@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import styled from 'styled-components';
+import theme from '../../../styles/theme';
 
 const MyDatePicker = () => {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -13,9 +15,9 @@ const MyDatePicker = () => {
 
   return (
     <div>
-      <button onClick={() => setShowCalendar(!showCalendar)}>
+      <Btn onClick={() => setShowCalendar(!showCalendar)}>
         {selectedDate ? selectedDate.toLocaleDateString() : '날짜 선택'}
-      </button>
+      </Btn>
       {showCalendar && (
         <DatePicker
           selected={selectedDate}
@@ -30,3 +32,13 @@ const MyDatePicker = () => {
 };
 
 export default MyDatePicker;
+
+const Btn = styled.button`
+  width: auto;
+  height: 35px;
+  background-color: ${theme.colors.fourth};
+  color: ${theme.colors.gr_2};
+  border-radius: 10px;
+  border: none;
+  padding: 8px 15px 10px 15px;
+`;
