@@ -3,6 +3,33 @@ import Line from '../common/Line/Line';
 import { Header } from '../common/Header';
 import styled from 'styled-components';
 import theme from '../../styles/theme';
+import axios from 'axios';
+
+const handleLogout = () => {
+  axios
+    .post('/logout')
+    .then(response => {
+      console.log(response);
+      // 로그아웃이 성공했을 때 처리할 코드를 작성해주세요.
+    })
+    .catch(error => {
+      console.error(error);
+      // 로그아웃이 실패했을 때 처리할 코드를 작성해주세요.
+    });
+};
+
+const handleWithdraw = () => {
+  axios
+    .patch('/withdrawal')
+    .then(response => {
+      console.log(response);
+      // 회원탈퇴가 성공했을 때 처리할 코드를 작성해주세요.
+    })
+    .catch(error => {
+      console.error(error);
+      // 회원탈퇴가 실패했을 때 처리할 코드를 작성해주세요.
+    });
+};
 
 const myPage = () => {
   return (
@@ -21,9 +48,9 @@ const myPage = () => {
       </Content>
       <Content>📬 구글폼 주소: </Content>
       <Line />
-      <Menu>로그아웃</Menu>
+      <Menu onClick={handleLogout}>로그아웃</Menu>
       <Line />
-      <Menu>회원 탈퇴</Menu>
+      <Menu onClick={handleWithdraw}>회원 탈퇴</Menu>
     </>
   );
 };
