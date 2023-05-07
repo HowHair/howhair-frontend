@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
+import styled from 'styled-components';
+import theme from '../../../styles/theme';
 
 const StarRating = () => {
   const [rating, setRating] = useState<number | null>(null);
@@ -28,9 +30,14 @@ const StarRating = () => {
           </label>
         );
       })}
-      <p>{rating}</p>
+      <Rating>만족도: {rating}</Rating>
     </div>
   );
 };
 
 export default StarRating;
+
+const Rating = styled.div`
+  margin-top: 10px;
+  font-family: ${theme.fonts.Pretendard_caption3_regular_12};
+`;
