@@ -90,6 +90,8 @@ const HairShopSearch = styled.input`
   border-radius: 11px;
   padding: 5px 0px 5px 20px;
   border: none;
+  margin-top: 10px;
+  margin-bottom: 15px;
 `;
 
 const TextBox = styled.input`
