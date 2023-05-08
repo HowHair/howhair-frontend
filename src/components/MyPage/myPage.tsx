@@ -7,7 +7,7 @@ import axios from 'axios';
 
 const handleLogout = () => {
   axios
-    .post('/logout')
+    .post('http://3.39.58.72:3000/logout')
     .then(response => {
       console.log(response);
       // 로그아웃이 성공했을 때 처리할 코드를 작성해주세요.
@@ -20,7 +20,7 @@ const handleLogout = () => {
 
 const handleWithdraw = () => {
   axios
-    .patch('/withdrawal')
+    .patch('http://3.39.58.72:3000/withdrawal')
     .then(response => {
       console.log(response);
       // 회원탈퇴가 성공했을 때 처리할 코드를 작성해주세요.
