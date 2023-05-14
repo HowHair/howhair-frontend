@@ -5,6 +5,20 @@ import styled from 'styled-components';
 import theme from '../../styles/theme';
 import axios from 'axios';
 
+// 내 정보 수정 페이지 조회 (GET)
+const myInfoCheck = () => {
+  axios
+    .get('http://3.39.58.72:3000/mypage')
+    .then(response => {
+      console.log(response);
+      // 로그아웃이 성공했을 때 처리할 코드를 작성해주세요.
+    })
+    .catch(error => {
+      console.error(error);
+      // 로그아웃이 실패했을 때 처리할 코드를 작성해주세요.
+    });
+};
+
 const handleLogout = () => {
   axios
     .post('http://3.39.58.72:3000/logout')
@@ -36,7 +50,7 @@ const myPage = () => {
     <>
       <Header title="My Page" />
       <Line />
-      <Menu>내 정보 수정</Menu>
+      <Menu onClick={myInfoCheck}>내 정보 수정</Menu>
       <Line />
       <Menu>북마크</Menu>
       <Line />
