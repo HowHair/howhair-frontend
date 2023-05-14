@@ -15,7 +15,7 @@ const infRev = () => {
       <Line />
       <RevDiv>
         <MytypeMenu>My Type</MytypeMenu>
-        <RevBtn>수정</RevBtn>
+        <RevBtn onClick={myInfoChange}>수정</RevBtn>
       </RevDiv>
       {/* 수정 버튼 클릭시 수정할 수 있는 드롭다운 나타내기 */}
       {/* 로그인 시 선택한 정보 가져오기 */}
@@ -33,31 +33,19 @@ const infRev = () => {
 
 export default infRev;
 
-// 내 정보 수정 페이지 조회 (GET)
-axios
-  .get('http://howhair.site:3000/mypage')
-  .then(function (response) {
-    // response
-  })
-  .catch(function (error) {
-    // 오류발생시 실행
-  })
-  .then(function () {
-    // 항상 실행
-  });
-
 // 내 정보 수정 (PATCH)
-axios
-  .patch('http://howhair.site:3000/mypage', {})
-  .then(function (response) {
-    // response
-  })
-  .catch(function (error) {
-    // 오류발생시 실행
-  })
-  .then(function () {
-    // 항상 실행
-  });
+const myInfoChange = () => {
+  axios
+    .patch('http://3.39.58.72:3000/mypage')
+    .then(response => {
+      console.log(response);
+      // 회원탈퇴가 성공했을 때 처리할 코드를 작성해주세요.
+    })
+    .catch(error => {
+      console.error(error);
+      // 회원탈퇴가 실패했을 때 처리할 코드를 작성해주세요.
+    });
+};
 
 const Menu = styled.div`
   margin-top: 20px;
